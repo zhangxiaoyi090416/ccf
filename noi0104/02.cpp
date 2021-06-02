@@ -10,16 +10,15 @@
 //     3.14
 
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
-
 int main()
 {
     float n;
     cin >> n;
     if (n >= 0)
-        cout << n << endl;
+        cout << fixed << setprecision(2) << n << endl;
     else
-        cout << -n << endl;
+        cout << fixed << setprecision(2) << -n << endl;
     return 0;
 }

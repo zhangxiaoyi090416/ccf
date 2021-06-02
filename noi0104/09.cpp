@@ -19,30 +19,26 @@ using namespace std;
 
 int main()
 {
-    int n, i, m;
+    int n;
+    string r;
 
     cin >> n;
-    m = n;
 
     if (n % 3 == 0)
     {
-        cout << 3;
-        n = n / 3;
+        cout << "3 ";
     }
     if (n % 5 == 0)
     {
-        if (m != n)
-            cout << " ";
-
-        cout << 5;
-        n = n / 5;
+        cout << "5 ";
     }
     if (n % 7 == 0)
     {
-        if (m != n)
-            cout << " ";
-        cout << 7;
-        n = n / 7;
+        cout << "7 ";
+    }
+    if (n % 3 != 0 and n % 5 != 0 and n % 7 != 0)
+    {
+        cout << "n";
     }
 
     return 0;

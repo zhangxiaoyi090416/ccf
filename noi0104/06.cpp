@@ -17,7 +17,7 @@ int main()
 {
     int n;
     cin >> n;
-    if (10 <= n <= 99)
+    if (10 <= n && n <= 99)
         cout << 1 << endl;
     else
         cout << 0 << endl;

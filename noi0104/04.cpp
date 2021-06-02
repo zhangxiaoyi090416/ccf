@@ -10,17 +10,17 @@
 //     YES
 
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
 int main()
 {
+    string a;
 
-    char a;
+    getline(cin, a);
 
-    cin >> a;
-
-    if (int(a) % 2 == 1)
+    if (int(a[0]) % 2 == 1)
         cout << "YES" << endl;
     else
         cout << "NO" << endl;

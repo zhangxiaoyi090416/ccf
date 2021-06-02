@@ -1,4 +1,4 @@
-// 简单计算器【1.4编程基础之逻辑表达式与条件分支19】
+// 简单计算器
 //     一个最简单的计算器，支持+, -, *, / 四种运算。仅需考虑输入输出为整数的情况，数据和运算结果不会超过int表示的范围。然而：
 //     1. 如果出现除数为0的情况，则输出：Divided by zero!
 //     2. 如果出现无效的操作符(即不为 +, -, *, / 之一），则输出：Invalid operator!
@@ -13,7 +13,9 @@
 // 样例输出
 //     3
 #include <iostream>
+
 using namespace std;
+
 int main()
 {
     int a, b;
@@ -21,43 +23,21 @@ int main()
 
     cin >> a >> b >> n;
 
-    // if (n == '+')
-    //     cout << a + b << endl;
-    // else if (n == '-')
-    //     cout << a - b << endl;
-    // else if (n == '*')
-    //     cout << a * b << endl;
-    // else if (n == '/')
-    // {
-    //     if (b != 0)
-    //         cout << a / b << endl;
-    //     else if (b == 0)
-    //         cout << "Divided by zero!" << endl;
-    // }
-    // else
-    //     cout << "Invalid operator!" << endl;
-
-    switch (n)
-    {
-    case '+':
+    if (n == '+')
         cout << a + b << endl;
-        break;
-    case '-':
+    else if (n == '-')
         cout << a - b << endl;
-        break;
-    case '*':
+    else if (n == '*')
         cout << a * b << endl;
-        break;
-    case '/':
-        switch (b)
-        {
-        case 0:
-            cout << "Divided by zero!" << endl;
-            break;
-        default:
+    else if (n == '/')
+    {
+        if (b != 0)
             cout << a / b << endl;
-        }
+        else if (b == 0)
+            cout << "Divided by zero!" << endl;
     }
+    else
+        cout << "Invalid operator!" << endl;
 
     return 0;
 }
