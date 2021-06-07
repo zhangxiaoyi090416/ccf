@@ -12,38 +12,41 @@
 //     20.00%
 //     20.00%
 //     40.00%
-#include<iostream>
-#include<iomanip>
+
+#include <iostream>
+#include <iomanip>
+
 using namespace std;
+
 int main()
 {
     int n;
-    cin>>n;
-    int a[4]={0,0,0,0};
-    for (int i=0;i<n;i++)
+    cin >> n;
+    int a[4] = {0, 0, 0, 0};
+    for (int i = 0; i < n; i++)
     {
         int age;
-        cin>>age;
-        if(age>=0&&age<=18)
+        cin >> age;
+        if (age >= 0 && age <= 18)
         {
             a[0]++;
         }
-        else if(age>=19&&age<=35)
+        else if (age >= 19 && age <= 35)
         {
             a[1]++;
         }
-        else if(age>=36&&age<=60)
+        else if (age >= 36 && age <= 60)
         {
             a[2]++;
         }
-        else 
+        else
         {
             a[3]++;
         }
     }
-    for (int i=0;i<4;i++)
+    for (int i = 0; i < 4; i++)
     {
-        cout<<fixed<<setprecision(2)<<100/(1.0*n/a[i])<<"%"<<endl;
+        cout << fixed << setprecision(2) << 100 / (1.0 * n / a[i]) << "%" << endl;
     }
     return 0;
 }
