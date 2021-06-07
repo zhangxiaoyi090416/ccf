@@ -21,12 +21,12 @@ int main()
     cin >> n;
     for (int z = 1; z <= n; z++)
     {
-        int k = 1;
+        double k = 1;
         for (i = 1; i <= z; i++)
         {
             k *= i;
         }
-        p += 1.0 / k;
+        p += 1 / k;
     }
     cout << fixed << setprecision(10) << p << endl;
     return 0;

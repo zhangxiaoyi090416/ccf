@@ -29,7 +29,7 @@ int main()
         cin >> a;
         s += a;
     }
-    cout << s << " " << fixed << setprecision(5) << float(s) / n;
+    cout << s << " " << fixed << setprecision(5) << double(s) / n;
 
     return 0;
 }
