@@ -6,27 +6,31 @@
 //     输出第一个仅出现一次的字符，若没有则输出no。
 // 样例输入:                   样例输出:
 //     abcabd                    c
+
 #include <iostream>
 #include <cstring>
 #include <cstdio>
+#include <map>
+
 using namespace std;
+
 int main()
 {
-    char x[100000];
+    string x;
     cin >> x;
-    for (int i = 0; i < strlen(x); i++)
+
+    map<char, int> fre;
+
+    for (auto c : x)
     {
-        int cnt = 0;
-        for (int j = 0; j < strlen(x); j++)
+        fre[c]++;
+    }
+
+    for (auto c : x)
+    {
+        if (fre[c] == 1)
         {
-            if (x[i] == x[j])
-            {
-                cnt++;
-            }
-        }
-        if (cnt == 1)
-        {
-            cout << x[i] << endl;
+            cout << c << endl;
             return 0;
         }
     }

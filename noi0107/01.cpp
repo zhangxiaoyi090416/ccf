@@ -12,13 +12,15 @@
 #include <cstdio>
 #include <iostream>
 #include <cstring>
+
 using namespace std;
+
 int main()
 {
-    char t[256];
-    cin.getline(t, 256);
+    string t;
+    getline(cin, t);
     int x = 0;
-    for (int i = 0; i < strlen(t); i++)
+    for (int i = 0; i < t.size(); i++)
     {
         if (t[i] >= '0' && t[i] <= '9')
         {
