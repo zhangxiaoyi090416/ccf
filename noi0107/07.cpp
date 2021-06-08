@@ -12,12 +12,14 @@
 #include <iostream>
 #include <cstring>
 #include <cstdio>
+
 using namespace std;
+
 int main()
 {
-    char x[255];
+    string x;
     cin >> x;
-    for (int i = 0; i < strlen(x); i++)
+    for (int i = 0; i < x.size(); i++)
     {
         switch (x[i])
         {

@@ -12,22 +12,26 @@
 //     RKPEGX9R;TWyYcp
 // 样例输出:
 //     no
+
 #include <iostream>
 #include <cstring>
 #include <cstdio>
+
 using namespace std;
+
 int main()
 {
-    char x[20];
-    cin >> x;
-    if (x[0] <= '9' && x[0] >= '0')
+    string x;
+    getline(cin, x);
+
+    if (x[0] >= '0' && x[0] <= '9')
     {
         cout << "no" << endl;
         return 0;
     }
-    for (int i = 0; i < strlen(x); i++)
+    for (int i = 0; i < x.size(); i++)
     {
-        if (x[i] >= '1' && x[i] <= '9' || x[i] >= 'a' && x[i] <= 'z' || x[i] >= 'A' && x[i] <= 'Z')
+        if (x[i] >= '0' && x[i] <= '9' || x[i] >= 'a' && x[i] <= 'z' || x[i] >= 'A' && x[i] <= 'Z' || x[i] == '_')
         {
             continue;
         }

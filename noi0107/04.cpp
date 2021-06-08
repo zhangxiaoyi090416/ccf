@@ -15,28 +15,31 @@
 //     Rock Scissors                                   Player1
 //     Paper Paper                                     Tie
 //     Rock Paper                                      Player2
+
 #include <iostream>
 #include <cstring>
 #include <cstdio>
+
 using namespace std;
+
 int main()
 {
     int n;
     cin >> n;
 
-    char player1[10], player2[10];
+    string player1, player2;
 
     for (int i = 0; i < n; i++)
     {
         cin >> player1 >> player2;
 
-        if (strcmp(player1, "Rock") == 0 && strcmp(player2, "Scissors") == 0 ||
-            strcmp(player1, "Scissors") == 0 && strcmp(player2, "Paper") == 0 ||
-            strcmp(player1, "Paper") == 0 && strcmp(player2, "Rock") == 0)
+        if (player1 == "Rock" && player2 == "Scissors" ||
+            player1 == "Scissors" && player2 == "Paper" ||
+            player1 == "Paper" && player2 == "Rock")
         {
             cout << "Player1" << endl;
         }
-        else if (strcmp(player1, player2) == 0)
+        else if (player1 == player2)
         {
             cout << "Tie" << endl;
         }
@@ -45,5 +48,6 @@ int main()
             cout << "Player2" << endl;
         }
     }
+
     return 0;
 }

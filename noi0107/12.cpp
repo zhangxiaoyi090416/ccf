@@ -13,56 +13,41 @@
 //     GSOOWFASOq
 // 样例输出:
 //     Trvdizrrvj
+
 #include <iostream>
 #include <cstring>
+
 using namespace std;
+
 int main()
 {
-    char a[50];
-    cin.getline(a, 50);
-    for (int i = 0; i < strlen(a); i++)
+    string a;
+    getline(cin, a);
+    for (int i = 0; i < a.size(); i++)
     {
         if (a[i] >= 'A' && a[i] <= 'Z')
         {
-            a[i] += 'a' - 'A';
+            a[i] = tolower(a[i]);
         }
         else if (a[i] >= 'a' && a[i] <= 'z')
         {
-            a[i] -= 'a' - 'A';
+            a[i] = toupper(a[i]);
         }
     }
-    for (int i = 0; i < strlen(a); i++)
+    for (int i = 0; i < a.size(); i++)
     {
-        if (a[i] >= 'a' && a[i] <= 'w' || a[i] >= 'A' && a[i] <= 'W')
+        if (a[i] >= 'a' && a[i] <= 'z')
         {
-            a[i] = char(a[i] + 3);
+            int n = (a[i] - 'a' + 3) % 26;
+            a[i] = char('a' + n);
         }
-        else if (a[i] == 'z')
+        else if (a[i] >= 'A' && a[i] <= 'Z')
         {
-            a[i] = 'c';
-        }
-        else if (a[i] == 'Z')
-        {
-            a[i] = 'C';
-        }
-        else if (a[i] == 'Y')
-        {
-            a[i] = 'B';
-        }
-        else if (a[i] == 'y')
-        {
-            a[i] = 'b';
-        }
-        else if (a[i] == 'X')
-        {
-            a[i] = 'A';
-        }
-        else if (a[i] == 'x')
-        {
-            a[i] = 'a';
+            int n = (a[i] - 'A' + 3) % 26;
+            a[i] = char('A' + n);
         }
     }
-    for (int i = strlen(a) - 1; i >= 0; i--)
+    for (int i = a.size() - 1; i >= 0; i--)
     {
         cout << a[i];
     }

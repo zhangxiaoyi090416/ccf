@@ -10,27 +10,28 @@
 //     Hello! How are you!
 // 样例输出:
 //     Ifmmp! Ipx bsf zpv!
+
 #include <iostream>
 #include <cstring>
 #include <cstdio>
+
 using namespace std;
+
 int main()
 {
-    char a[80];
-    cin.getline(a, 80);
-    for (int i = 0; i < strlen(a); i++)
+    string a;
+    getline(cin, a);
+    for (int i = 0; i < a.size(); i++)
     {
-        if (a[i] >= 'a' && a[i] <= 'y' || a[i] >= 'A' && a[i] <= 'Y')
+        if (a[i] >= 'a' && a[i] <= 'z')
         {
-            cout << char(a[i] + 1);
+            int n = (a[i] - 'a' + 1) % 26;
+            cout << char('a' + n);
         }
-        else if (a[i] == 'z')
+        else if (a[i] >= 'A' && a[i] <= 'Z')
         {
-            cout << 'a';
-        }
-        else if (a[i] == 'Z')
-        {
-            cout << 'A';
+            int n = (a[i] - 'A' + 1) % 26;
+            cout << char('A' + n);
         }
         else
         {

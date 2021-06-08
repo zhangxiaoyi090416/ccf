@@ -11,18 +11,25 @@
 //     1234
 // 样例输出:
 //     cege
+
 #include <iostream>
 #include <cstring>
 #include <cstdio>
+
 using namespace std;
+
 int main()
 {
-    char x[100];
-    cin >> x;
-    for (int i = 0; i < strlen(x) - 1; i++)
+    string x, y;
+
+    getline(cin, x);
+
+    for (int i = 0; i < x.size(); i++)
     {
-        cout << char(x[i] + x[i + 1]);
+        cout << char(x[i] + x[(i + 1) % x.size()]);
     }
-    cout << char(x[strlen(x) - 1] + x[0]) << endl;
+
+    cout << endl;
+
     return 0;
 }

@@ -8,28 +8,29 @@
 //     If so, you already have a Google Account. You can sign in on the right.
 // 样例输出:
 //     iF SO, YOU ALREADY HAVE A gOOGLE aCCOUNT. yOU CAN SIGN IN ON THE RIGHT.
+
 #include <iostream>
 #include <cstring>
+
 using namespace std;
+
 int main()
 {
-    char a[80];
-    cin.getline(a, 80);
-    for (int i = 0; i < strlen(a); i++)
+    string a;
+    getline(cin, a);
+
+    for (int i = 0; i < a.size(); i++)
     {
-        if (a[i] >= 'A' && a[i] <= 'Z')
+        if (isupper(a[i]))
         {
-            a[i] += 'a' - 'A';
+            a[i] = tolower(a[i]);
         }
-        else if (a[i] >= 'a' && a[i] <= 'z')
+        else if (islower(a[i]))
         {
-            a[i] -= 'a' - 'A';
+            a[i] = toupper(a[i]);
         }
     }
-    for (int i = 0; i < strlen(a); i++)
-    {
-        cout << a[i];
-    }
-    cout << endl;
+
+    cout << a << endl;
     return 0;
 }

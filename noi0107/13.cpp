@@ -8,17 +8,23 @@
 //     helloworld123Ha
 // 样例输出:
 //     HELLOWORLD123HA
+
 #include <iostream>
 #include <cstring>
+
 using namespace std;
+
 int main()
 {
-    char a[100];
-    cin.getline(a, 100);
-    for (int i = 0; i <= strlen(a); i++)
+    string a;
+    getline(cin, a);
+    for (int i = 0; i <= a.size(); i++)
     {
-        cout << char(toupper(a[i]));
+        if (a[i] >= 'a' && a[i] <= 'z')
+        {
+            a[i] = toupper(a[i]);
+        }
     }
-    cout << endl;
+    cout << a << endl;
     return 0;
 }
