@@ -21,41 +21,44 @@ int main()
 {
     int a, b;
     cin >> a >> b;
-    const int pq = a, qp = b;
-    int x[pq][qp];
+    int m[a][b];
     for (int i = 0; i < a; i++)
     {
-        for (int s = 0; s < b; s++)
+        for (int j = 0; j < b; j++)
         {
-            cin >> x[i][s];
+            cin >> m[i][j];
         }
     }
-    int k = 0, m = 1;
+    int s = 0;
     for (int i = 0; i < a; i++)
     {
-        if (m == 1)
+        if (i == 0)
         {
-            for (int s = 0; s < b; s++)
+            for (int j = 0; j < b; j++)
             {
-                k += x[0][s];
+                s += m[i][j];
             }
-            m++;
         }
-        else if (1 < m && m < b)
+        else if (i == a - 1)
         {
-            k += x[m - 1][0] + x[m - 1][b - 1];
-            m++;
-        }
-        else if (m == a)
-        {
-            for (int s = 0; s < b; s++)
+            for (int j = 0; j < b; j++)
             {
-                k += x[a - 1][s];
+                s += m[i][j];
             }
-            m++;
+        }
+        else
+        {
+            if (b == 1)
+            {
+                s += m[i][0];
+            }
+            else
+            {
+                s += m[i][0] + m[i][b - 1];
+            }
         }
     }
-    cout << k << endl;
+    cout << s << endl;
 
     return 0;
 }

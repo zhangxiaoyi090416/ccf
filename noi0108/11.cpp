@@ -33,19 +33,14 @@ int main()
             cin >> a[i][j];
         }
     }
-    for (int i = 0; i < n; i++)
+    for (int j = 0; j < m; j++)
     {
-        for (int j = 0; j < m; j++)
+        for (int i = n - 1; i >= 0; i--)
         {
-            b[j][i] = a[n - 1 - i][j];
-        }
-    }
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            cout << b[i][j] << " ";
+            cout << a[i][j] << " ";
         }
         cout << endl;
     }
+
+    return 0;
 }

@@ -24,7 +24,6 @@ int main()
     int n, m;
     cin >> n >> m;
     int a[n][m];
-    int b[m][n];
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -32,18 +31,11 @@ int main()
             cin >> a[i][j];
         }
     }
-    for (int y = 0; y < n; y++)
+    for (int j = 0; j < m; j++)
     {
-        for (int x = 0; x < m; x++)
+        for (int i = 0; i < n; i++)
         {
-            b[y][x] = a[x][y];
-        }
-    }
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            cout << b[i][j] << " ";
+            cout << a[i][j] << " ";
         }
         cout << endl;
     }

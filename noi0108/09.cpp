@@ -30,8 +30,6 @@ int main()
     int m2[m][k];
     int c[n][k];
 
-    memset(c, 0, sizeof(c));
-
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -50,6 +48,7 @@ int main()
     {
         for (int j = 0; j < k; j++)
         {
+            c[i][j] = 0;
             for (int s = 0; s < m; s++)
             {
                 c[i][j] += m1[i][s] * m2[s][j];

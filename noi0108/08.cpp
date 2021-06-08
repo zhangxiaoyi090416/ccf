@@ -44,19 +44,12 @@ int main()
             cin >> n[i][s];
         }
     }
-    int l[x][y];
+
     for (int i = 0; i < x; i++)
     {
         for (int s = 0; s < y; s++)
         {
-            l[i][s] = m[i][s] + n[i][s];
-        }
-    }
-    for (int i = 0; i < x; i++)
-    {
-        for (int s = 0; s < y; s++)
-        {
-            cout << l[i][s] << " ";
+            cout << m[i][s] + n[i][s] << " ";
         }
         cout << endl;
     }

@@ -49,7 +49,7 @@ int main()
     {
         for (int s = 0; s <= 4; s++)
         {
-            cout << a[i][s];
+            cout << a[i][s] << " ";
         }
         cout << endl;
     }
