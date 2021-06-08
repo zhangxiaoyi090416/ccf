@@ -13,57 +13,40 @@
 //     1,4,9
 
 #include <iostream>
+
 using namespace std;
 
 int main()
 {
-    bool light[5000];
-    for (int i = 0; i < 5000; i++)
+    int n, m;
+    cin >> n >> m;
+
+    bool light[n + 1];
+    for (int i = 0; i <= n; i++)
     {
         light[i] = true;
     }
 
-    int n, m;
-    cin >> n >> m;
-
     for (int i = 1; i <= m; i++)
     {
-        for (int s = 0; s < n; s = s + i)
+        for (int s = i; s <= n; s = s + i)
         {
             light[s] = !light[s];
         }
     }
 
-    int i = 0;
-    for (; i <= m; i++)
+    bool comma = false;
+    for (int i = 1; i <= n; i++)
     {
         if (light[i] == false)
         {
+            if (comma)
+                cout << ",";
+            else
+                comma = true;
             cout << i;
-            break;
         }
     }
-    for (i++; i <= m; i++)
-    {
-        if (light[i] == false)
-        {
-            cout << "," << i;
-        }
-    }
-    cout << endl;
 
     return 0;
-
-    // bool comma = false;
-    // for (int i = 0; i < m; i++)
-    // {
-    //     if (light[i] == false)
-    //     {
-    //         if (comma)
-    //             cout << ",";
-    //         cout << i;
-    //         comma = true;
-    //     }
-    // }
-    // return 0;
 }
