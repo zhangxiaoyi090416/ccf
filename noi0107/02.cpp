@@ -12,19 +12,19 @@
 using namespace std;
 int main()
 {
-    char x[10000];
+    char x[100000];
     cin >> x;
     for (int i = 0; i < strlen(x); i++)
     {
-        char g = 0;
-        for (int j = i; j < strlen(x); j++)
+        int cnt = 0;
+        for (int j = 0; j < strlen(x); j++)
         {
             if (x[i] == x[j])
             {
-                g++;
+                cnt++;
             }
         }
-        if (g == 1)
+        if (cnt == 1)
         {
             cout << x[i] << endl;
             return 0;
