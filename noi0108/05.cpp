@@ -40,10 +40,12 @@ int main()
     }
     for (int x = 0; x < 5; x++)
     {
-        minimum[x] = m[x][0];
+        minimum[x] = m[0][x];
         for (int y = 0; y < 5; y++)
             minimum[x] = min(m[y][x], minimum[x]);
     }
+
+    bool found = false;
     for (int y = 0; y < 5; y++)
     {
         for (int x = 0; x < 5; x++)
@@ -51,11 +53,14 @@ int main()
             if (m[y][x] == maximum[y] && m[y][x] == minimum[x])
             {
                 cout << y + 1 << " " << x + 1 << " " << m[y][x] << endl;
-                return 0;
+                found = true;
             }
         }
     }
-    cout << "not found" << endl;
+    if (!found)
+    {
+        cout << "not found" << endl;
+    }
 
     return 0;
 }
