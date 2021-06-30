@@ -13,6 +13,7 @@
 //     1,4,9
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -21,7 +22,7 @@ int main()
     int n, m;
     cin >> n >> m;
 
-    bool light[n + 1];
+    vector<bool> light(n + 1);
     for (int i = 0; i <= n; i++)
     {
         light[i] = true;
