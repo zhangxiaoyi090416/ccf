@@ -15,42 +15,46 @@
 //     Trvdizrrvj
 
 #include <iostream>
-#include <cstring>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
 int main()
 {
-    string a;
-    getline(cin, a);
-    for (int i = 0; i < a.size(); i++)
+    string x;
+
+    getline(cin, x);
+
+    for (auto &c : x)
     {
-        if (a[i] >= 'A' && a[i] <= 'Z')
+        if (isupper(c))
         {
-            a[i] = tolower(a[i]);
+            c = tolower(c);
         }
-        else if (a[i] >= 'a' && a[i] <= 'z')
+        else if (islower(c))
         {
-            a[i] = toupper(a[i]);
+            c = toupper(c);
         }
     }
-    for (int i = 0; i < a.size(); i++)
+    for (auto &c : x)
     {
-        if (a[i] >= 'a' && a[i] <= 'z')
+
+        if (islower(c))
         {
-            int n = (a[i] - 'a' + 3) % 26;
-            a[i] = char('a' + n);
+            int n = (c - 'a' + 3) % 26;
+            c = char('a' + n);
         }
-        else if (a[i] >= 'A' && a[i] <= 'Z')
+        else if (isupper(c))
         {
-            int n = (a[i] - 'A' + 3) % 26;
-            a[i] = char('A' + n);
+            int n = (c - 'A' + 3) % 26;
+            c = char('A' + n);
         }
     }
-    for (int i = a.size() - 1; i >= 0; i--)
-    {
-        cout << a[i];
-    }
-    cout << endl;
+
+    reverse(x.begin(), x.end());
+
+    cout << x << endl;
+
     return 0;
 }

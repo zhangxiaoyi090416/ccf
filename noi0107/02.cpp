@@ -8,8 +8,7 @@
 //     abcabd                    c
 
 #include <iostream>
-#include <cstring>
-#include <cstdio>
+#include <string>
 #include <map>
 
 using namespace std;

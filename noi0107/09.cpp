@@ -12,8 +12,7 @@
 //     Ifmmp! Ipx bsf zpv!
 
 #include <iostream>
-#include <cstring>
-#include <cstdio>
+#include <string>
 
 using namespace std;
 
@@ -21,21 +20,21 @@ int main()
 {
     string a;
     getline(cin, a);
-    for (int i = 0; i < a.size(); i++)
+    for (auto c : a)
     {
-        if (a[i] >= 'a' && a[i] <= 'z')
+        if (islower(c))
         {
-            int n = (a[i] - 'a' + 1) % 26;
+            int n = (c - 'a' + 1) % 26;
             cout << char('a' + n);
         }
-        else if (a[i] >= 'A' && a[i] <= 'Z')
+        else if (isupper(c))
         {
-            int n = (a[i] - 'A' + 1) % 26;
+            int n = (c - 'A' + 1) % 26;
             cout << char('A' + n);
         }
         else
         {
-            cout << a[i];
+            cout << c;
         }
     }
     cout << endl;

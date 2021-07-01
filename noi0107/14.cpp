@@ -10,27 +10,29 @@
 //     iF SO, YOU ALREADY HAVE A gOOGLE aCCOUNT. yOU CAN SIGN IN ON THE RIGHT.
 
 #include <iostream>
-#include <cstring>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-    string a;
-    getline(cin, a);
+    string x;
 
-    for (int i = 0; i < a.size(); i++)
+    getline(cin, x);
+
+    for (auto &c : x)
     {
-        if (isupper(a[i]))
+        if (isupper(c))
         {
-            a[i] = tolower(a[i]);
+            c = tolower(c);
         }
-        else if (islower(a[i]))
+        else if (islower(c))
         {
-            a[i] = toupper(a[i]);
+            c = toupper(c);
         }
     }
 
-    cout << a << endl;
+    cout << x << endl;
+
     return 0;
 }

@@ -14,15 +14,14 @@
 //      yes
 
 #include <iostream>
-#include <cstring>
-#include <cstdio>
+#include <string>
 
 using namespace std;
 
 int main()
 {
     string a, b;
-    double x, g;
+    double x;
     int cnt = 0;
 
     cin >> x;
@@ -37,7 +36,7 @@ int main()
         }
     }
 
-    g = (double)cnt / a.size();
+    double g = double(cnt) / a.size();
 
     if (g >= x)
     {

@@ -14,8 +14,7 @@
 //     no
 
 #include <iostream>
-#include <cstring>
-#include <cstdio>
+#include <string>
 
 using namespace std;
 
@@ -24,14 +23,15 @@ int main()
     string x;
     getline(cin, x);
 
-    if (x[0] >= '0' && x[0] <= '9')
+    if (isdigit(x[0]))
     {
         cout << "no" << endl;
         return 0;
     }
-    for (int i = 0; i < x.size(); i++)
+
+    for (auto c : x)
     {
-        if (x[i] >= '0' && x[i] <= '9' || x[i] >= 'a' && x[i] <= 'z' || x[i] >= 'A' && x[i] <= 'Z' || x[i] == '_')
+        if (isdigit(c) || islower(c) || isupper(c) || c == '_')
         {
             continue;
         }
@@ -41,6 +41,8 @@ int main()
             return 0;
         }
     }
+
     cout << "yes" << endl;
+
     return 0;
 }

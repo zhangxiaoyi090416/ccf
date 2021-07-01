@@ -13,14 +13,13 @@
 //     cege
 
 #include <iostream>
-#include <cstring>
-#include <cstdio>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-    string x, y;
+    string x;
 
     getline(cin, x);
 

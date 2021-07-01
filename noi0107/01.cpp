@@ -11,7 +11,7 @@
 
 #include <cstdio>
 #include <iostream>
-#include <cstring>
+#include <string>
 
 using namespace std;
 
@@ -20,15 +20,11 @@ int main()
     string t;
     getline(cin, t);
     int x = 0;
-    for (int i = 0; i < t.size(); i++)
+    for (auto c : t)
     {
-        if (t[i] >= '0' && t[i] <= '9')
+        if (isdigit(c))
         {
             x++;
-        }
-        else if (t[i] == '\0')
-        {
-            break;
         }
     }
     cout << x;

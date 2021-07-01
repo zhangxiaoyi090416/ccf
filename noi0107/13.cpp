@@ -10,21 +10,21 @@
 //     HELLOWORLD123HA
 
 #include <iostream>
-#include <cstring>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-    string a;
-    getline(cin, a);
-    for (int i = 0; i <= a.size(); i++)
+    string x;
+    getline(cin, x);
+    for (auto &c : x)
     {
-        if (a[i] >= 'a' && a[i] <= 'z')
+        if (islower(c))
         {
-            a[i] = toupper(a[i]);
+            c = toupper(c);
         }
     }
-    cout << a << endl;
+    cout << x << endl;
     return 0;
 }

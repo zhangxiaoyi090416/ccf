@@ -10,8 +10,7 @@
 // 样例输出:
 //     TATACCTACCACAAACCGAGAC
 #include <iostream>
-#include <cstring>
-#include <cstdio>
+#include <string>
 
 using namespace std;
 
@@ -19,9 +18,9 @@ int main()
 {
     string x;
     cin >> x;
-    for (int i = 0; i < x.size(); i++)
+    for (auto c : x)
     {
-        switch (x[i])
+        switch (c)
         {
         case 'A':
             cout << 'T';
