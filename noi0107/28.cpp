@@ -11,35 +11,26 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
-#include <algorithm>
 
 using namespace std;
 
 int main()
 {
     string s;
-    vector<string> words;
 
     getline(cin, s);
 
-    int start = 0;
-    int end = s.find(" ", start);
-
-    while (end != string::npos)
+    auto end = s.size();
+    auto start = s.rfind(" ", end - 1) + 1;
+    while (start != string::npos + 1)
     {
-        words.push_back(s.substr(start, end - start));
-        start = end + 1;
-        end = s.find(" ", start);
+        auto x = s.substr(start, end - start);
+        cout << x << " ";
+        end = start - 1;
+        start = s.rfind(" ", end - 1) + 1;
     }
-    words.push_back(s.substr(start, end - start));
-
-    reverse(words.begin(), words.end());
-
-    for (auto word : words)
-    {
-        cout << word << " ";
-    }
+    end = s.find(" ");
+    cout << s.substr(0, end);
     cout << endl;
 
     return 0;

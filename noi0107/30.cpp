@@ -25,13 +25,13 @@ int main()
         swap(a, b);
     }
 
-    auto c = a.size(), d = b.size();
-    a.append(a.substr(0, c - 1));
-    b.append(b.substr(0, d - 1));
+    auto as = a.size(), bs = b.size();
+    a += a;
+    b += b;
 
-    for (int i = d; i > 0; i--)
+    for (int i = bs; i > 0; i--)
     {
-        for (int j = 0; j < d; j++)
+        for (int j = 0; j < bs; j++)
         {
             auto str = b.substr(j, i);
             if (a.find(str) != string::npos)

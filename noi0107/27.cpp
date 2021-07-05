@@ -21,21 +21,23 @@ int main()
 
     getline(cin, s);
 
-    for (auto c : s)
+    int start = 0;
+    int end = s.find(" ");
+    while (end != string::npos)
     {
-        if (c == ' ')
+        for (int i = end - 1; i >= start; i--)
         {
-            reverse(w.begin(), w.end());
-            cout << w << " ";
-            w.clear();
+            cout << s[i];
         }
-        else
-        {
-            w += c;
-        }
+        cout << " ";
+        start = end + 1;
+        end = s.find(" ", start);
     }
-    reverse(w.begin(), w.end());
-    cout << w << endl;
+    for (int i = s.size() - 1; i >= start; i--)
+    {
+        cout << s[i];
+    }
+    cout << endl;
 
     return 0;
 }
