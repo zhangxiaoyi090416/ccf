@@ -4,6 +4,6 @@
         "algorithm": "cpp",
         "iostream": "cpp",
         "cmath": "cpp",
-        "*.tcc": "cpp"
+        "iomanip": "cpp"
     }
 }
