@@ -8,12 +8,13 @@
             "name": "g++ - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.bin",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${fileDirname}",
             "environment": [],
             "MIMode": "gdb",
+            "console": "integratedTerminal",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
